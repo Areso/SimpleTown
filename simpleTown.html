@@ -1,0 +1,120 @@
+<html>
+	<head>
+		<style type="text/css">
+			.item{
+				position: absolute;
+			}
+		</style>
+		<script type="text/javascript" src="knockout-2.2.1.debug.js"></script>
+		<script type="text/javascript" src="underscore.js"></script>
+		<script type="text/javascript" src="postal.js"></script>
+		<script type="text/javascript" src="createBusses.js"></script>
+		<script type="text/javascript" src="model.js"></script>
+		<script type="text/javascript" src="viewModels.js"></script>
+	</head>
+	<body>
+
+		<div style="height:100%; width:100%" id="main" data-bind="click: clicked">
+			<div data-bind="foreach: items">
+				<div class="item" data-bind="style:{left:left,top:top}">
+		         <svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="48px"
+   height="48px"
+   id="svg3201"
+   version="1.1">
+  <defs id="defs3203">    
+  </defs>
+  
+  <metadata
+     id="metadata3206">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1">
+     
+    <g
+       id="g3249">
+      <rect         
+         y="17.536198"
+         x="7.5503535"
+         height="23.339058"
+         width="34.201256"
+         id="rect2985-1"
+         style="fill:#b49c52;fill-opacity:1;stroke:#000000;stroke-width:0.88668919;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <rect      
+         y="31.480915"
+         x="10.926436"
+         height="9.2475481"
+         width="7.1925421"
+         id="rect3755-5"
+         style="fill:#008000;stroke:#000000;stroke-width:0.88668919;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <rect         
+         y="21.059076"
+         x="22.082218"
+         height="5.1375279"
+         width="6.1650333"
+         id="rect3757-5"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.88668919;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <rect         
+         y="31.260735"
+         x="21.935438"
+         height="5.1375279"
+         width="16.586882"
+         id="rect3757-2-8"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.88668919;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <rect        
+         y="21.347113"
+         x="33.082352"
+         height="5.1375279"
+         width="6.1650333"
+         id="rect3757-1-5"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.88668919;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <rect        
+         y="21.347113"
+         x="10.70443"
+         height="5.1375279"
+         width="6.1650333"
+         id="rect3757-20-01"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.88668919;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path         
+         id="path3798-81"
+         d="m 45.568063,17.095834 -44.1827411,0 L 23.990444,4.0318341 45.568063,17.095834"
+         style="fill:#dfb7b7;fill-opacity:1;stroke:#000000;stroke-width:0.87186742;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+  </g>
+</svg>
+
+					<!-- <img  data-bind="attr:{src:imageUrl}"></img>				 -->
+				</div>
+			</div>	
+
+			
+		</div>		
+	</body>
+
+	<script type="text/javascript">
+		
+		var world = new model.World();
+		
+		ko.applyBindings(rootVm);
+
+		modelChannel.subscribe("#",function(message,envolope){
+			console.log(JSON.stringify(message) + ", " + JSON.stringify(envolope));
+		})
+
+		//setInterval(function(){gameChannel.publish("game.tick")},1000/gameFps);
+	</script>
+</html>
