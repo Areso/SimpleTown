@@ -1,7 +1,7 @@
 var HouseVM = function(position){
 	this.top = position.y;
 	this.left = position.x;
-	this.imageUrl = "house1.png";
+	this.imageUrl = "house.svg";
 }
 
 var rootVm = {
